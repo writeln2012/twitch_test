@@ -1,6 +1,7 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 
 class BasePage:
@@ -28,9 +29,11 @@ class BasePage:
         Select(self.driver.find_element(by_name, by_val)).select_by_value(value)
 
     def start_watching(self):
-        start_watching_button = self.driver.find_element(
-            By.CSS_SELECTOR, 'button[data-a-target="player-overlay-mature-accept"]')
-        if start_watching_button.is_displayed():
-            start_watching_button.click()
+        try:
+            self.driver.find_element(By.CSS_SELECTOR, 'button[data-a-target="player-overlay-mature-accept"]').click()
+
+        except NoSuchElementException:
+            pass
+
         else:
             pass
