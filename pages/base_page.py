@@ -1,5 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
 
 
 class BasePage:
@@ -25,3 +26,11 @@ class BasePage:
     def select_by_value(self, args: tuple):
         by_name, by_val, value = args
         Select(self.driver.find_element(by_name, by_val)).select_by_value(value)
+
+    def start_watching(self):
+        start_watching_button = self.driver.find_element(
+            By.CSS_SELECTOR, 'button[data-a-target="player-overlay-mature-accept"]')
+        if start_watching_button.is_displayed():
+            start_watching_button.click()
+        else:
+            pass
