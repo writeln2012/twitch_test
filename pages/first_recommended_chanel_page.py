@@ -7,11 +7,16 @@ class FirstRecommendedChanel(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def pausing_stream(self):
-        # ActionChains(self).move_to_element(self.find_element(apl.stream_screen)).click(self.find_element(apl.pause_play_button)).perform()
-        stream_screen = self.find_element(apl.stream_screen)
-        pause_play_button = self.find_element(apl.pause_play_button)
-        ActionChains(self).move_to_element(stream_screen).click(pause_play_button).perform()
+    def pausing_stream(self, driver):
+        start_watching_button = self.find_element(apl.start_watching)
+        if start_watching_button.is_displayed():
+            start_watching_button.click()
+            ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
+                self.find_element(apl.pause_play_button)).perform()
+        else:
+            ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
+                self.find_element(apl.pause_play_button)).perform()
 
-    def pausing_message(self):
-        self.find_element(apl.pause_message)
+    def show_pausing_message(self):
+        pause_message = self.find_element(apl.pause_message)
+        return pause_message
