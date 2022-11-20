@@ -75,3 +75,21 @@ def test_show_hotkeys_button(driver):
     first_rec_chanel.click_settings_button(driver)
     first_rec_chanel.click_show_hotkeys()
     assert first_rec_chanel.list_of_hotkeys().is_displayed()
+
+
+def test_theatre_mode_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_theatre_mode_button(driver)
+    assert first_rec_chanel.theatre_mode_activated() is True
+
+
+def test_full_screen_mode_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_full_screen_button(driver)
+    assert first_rec_chanel.full_screen_mode_activated() is True

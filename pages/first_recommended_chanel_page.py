@@ -94,3 +94,20 @@ class FirstRecommendedChanel(BasePage):
 
     def list_of_hotkeys(self):
         return self.find_element(apl.list_of_hotkeys)
+
+    def click_theatre_mode_button(self, driver):
+        self.start_watching()
+        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(self.find_element(
+            apl.theatre_mode_button)).perform()
+
+    def theatre_mode_activated(self):
+        return self.find_element(apl.check_theatre_mode).is_displayed()
+
+    def click_full_screen_button(self, driver):
+        self.start_watching()
+        full_screen_button = self.find_elements(apl.full_screen_button)
+        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
+            full_screen_button[0]).perform()
+
+    def full_screen_mode_activated(self):
+        return self.find_element(apl.check_fullscreen_mode).is_displayed()

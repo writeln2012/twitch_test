@@ -24,3 +24,7 @@ select_report = (
 first_report = (By.CSS_SELECTOR, 'option[value="stutter-both"]')
 settings_menu_field = (By.CSS_SELECTOR, 'div[data-a-target="player-settings-menu"]')
 list_of_hotkeys = (By.CLASS_NAME, 'tw-table-body')
+theatre_mode_button = (By.CSS_SELECTOR, 'button[data-a-target="player-theatre-mode-button"]')
+check_theatre_mode = (By.CSS_SELECTOR, 'div[data-a-player-state="theatre"]')
+full_screen_button = (By.CSS_SELECTOR, 'button[data-a-target="player-fullscreen-button"]')
+check_fullscreen_mode = (By.CSS_SELECTOR, 'button[aria-label="Обычный режим (f)"]')
