@@ -75,3 +75,22 @@ class FirstRecommendedChanel(BasePage):
 
     def check_mini_player_window(self):
         return self.find_element(apl.mini_player_window)
+
+    def click_report_a_bug(self):
+        self.find_element(apl.report_a_bug_button).click()
+
+    def select_a_bug(self):
+        self.select_by_text(apl.select_report)
+
+    def error_option_selected(self):
+        return self.find_element(apl.first_report)
+
+    def click_show_hotkeys(self):
+        settings_menu_field = self.find_element(apl.settings_menu_field)
+        settings_buttons = settings_menu_field.find_elements(
+            By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 hUemkh"]')
+        hotkeys_button = settings_buttons[5]
+        hotkeys_button.click()
+
+    def list_of_hotkeys(self):
+        return self.find_element(apl.list_of_hotkeys)

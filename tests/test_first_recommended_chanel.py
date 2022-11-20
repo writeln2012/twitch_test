@@ -33,7 +33,7 @@ def test_change_video_quality_of_stream(driver):
     assert first_rec_chanel.quality_video_change_check(driver) == '160p'
 
 
-def test_video_statistics_is_working(driver):
+def test_video_statistics(driver):
     home_page = HomePage(driver)
     home_page.open_page()
     home_page.click_first_recommended_chanel()
@@ -44,7 +44,7 @@ def test_video_statistics_is_working(driver):
     assert first_rec_chanel.check_video_statistics_window().is_displayed()
 
 
-def test_mini_player_window_is_working(driver):
+def test_mini_player_window(driver):
     home_page = HomePage(driver)
     home_page.open_page()
     home_page.click_first_recommended_chanel()
@@ -54,3 +54,24 @@ def test_mini_player_window_is_working(driver):
     first_rec_chanel.mini_player_activate()
     first_rec_chanel.click_view_button()
     assert first_rec_chanel.check_mini_player_window().is_displayed()
+
+
+def test_report_a_bug_selection(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_settings_button(driver)
+    first_rec_chanel.click_report_a_bug()
+    first_rec_chanel.select_a_bug()
+    assert first_rec_chanel.error_option_selected().is_selected()
+
+
+def test_show_hotkeys_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_settings_button(driver)
+    first_rec_chanel.click_show_hotkeys()
+    assert first_rec_chanel.list_of_hotkeys().is_displayed()

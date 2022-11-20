@@ -17,3 +17,10 @@ video_statistics_window = (By.CSS_SELECTOR, 'div[data-a-target="player-overlay-v
 indicator_of_mini_player = (By.CSS_SELECTOR, 'div[data-a-target="player-settings-submenu-advanced-toggle-mini"]')
 view_button = (By.CLASS_NAME, 'navigation-link')
 mini_player_window = (By.CLASS_NAME, 'video-player__overlay')
+report_a_bug_button = (By.CSS_SELECTOR, 'button[data-a-target="player-settings-menu-item-report"]')
+select_report = (
+    By.CSS_SELECTOR, 'select[class="ScInputBase-sc-vu7u7d-0 ScSelect-sc-gz38t2-0'
+                     ' gXVFsI AJDRH InjectLayout-sc-1i43xsx-0 bLZRbT tw-select"]', '«Заикание» звука и изображения')
+first_report = (By.CSS_SELECTOR, 'option[value="stutter-both"]')
+settings_menu_field = (By.CSS_SELECTOR, 'div[data-a-target="player-settings-menu"]')
+list_of_hotkeys = (By.CLASS_NAME, 'tw-table-body')
