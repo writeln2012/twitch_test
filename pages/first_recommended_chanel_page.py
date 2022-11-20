@@ -49,3 +49,29 @@ class FirstRecommendedChanel(BasePage):
             apl.settings_button)).perform()
         check_quality = self.find_element(apl.quality_video_check)
         return check_quality.text
+
+    def click_advanced_button(self):
+        self.find_element(apl.advanced_button).click()
+
+    def click_video_statistics_button(self):
+        advanced_settings_field = self.find_element(apl.advanced_settings_field)
+        advanced_settings = advanced_settings_field.find_elements(
+            By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 jwovJQ"')
+        video_statistics = advanced_settings[2]
+        video_statistics.click()
+
+    def check_video_statistics_window(self):
+        return self.find_element(apl.video_statistics_window)
+
+    def mini_player_activate(self):
+        indicator_of_mini_player = self.find_element(apl.indicator_of_mini_player)
+        if indicator_of_mini_player.is_enabled():
+            pass
+        else:
+            indicator_of_mini_player.click()
+
+    def click_view_button(self):
+        self.find_element(apl.view_button).click()
+
+    def check_mini_player_window(self):
+        return self.find_element(apl.mini_player_window)
