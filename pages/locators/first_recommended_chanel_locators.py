@@ -28,3 +28,4 @@ theatre_mode_button = (By.CSS_SELECTOR, 'button[data-a-target="player-theatre-mo
 check_theatre_mode = (By.CSS_SELECTOR, 'div[data-a-player-state="theatre"]')
 full_screen_button = (By.CSS_SELECTOR, 'button[data-a-target="player-fullscreen-button"]')
 check_fullscreen_mode = (By.CSS_SELECTOR, 'button[aria-label="Обычный режим (f)"]')
+open_close_chat_button = (By.CSS_SELECTOR, 'button[aria-describedby="a91PVT00reOihUBCXk5Acg2gNm0M94r4"]')

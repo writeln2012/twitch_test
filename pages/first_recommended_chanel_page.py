@@ -32,8 +32,8 @@ class FirstRecommendedChanel(BasePage):
 
     def click_settings_button(self, driver):
         self.start_watching()
-        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(self.find_element(
-            apl.settings_button)).perform()
+        ActionChains(driver).move_to_element(self.find_element(
+            apl.stream_screen)).click(self.find_element(apl.settings_button)).perform()
 
     def click_quality_button(self):
         self.find_element(apl.quality_video_button).click()
@@ -45,8 +45,8 @@ class FirstRecommendedChanel(BasePage):
         list_of_qualities[6].click()
 
     def quality_video_change_check(self, driver):
-        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(self.find_element(
-            apl.settings_button)).perform()
+        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
+            self.find_element(apl.settings_button)).perform()
         check_quality = self.find_element(apl.quality_video_check)
         return check_quality.text
 
