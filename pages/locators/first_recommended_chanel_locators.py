@@ -28,4 +28,7 @@ theatre_mode_button = (By.CSS_SELECTOR, 'button[data-a-target="player-theatre-mo
 check_theatre_mode = (By.CSS_SELECTOR, 'div[data-a-player-state="theatre"]')
 full_screen_button = (By.CSS_SELECTOR, 'button[data-a-target="player-fullscreen-button"]')
 check_fullscreen_mode = (By.CSS_SELECTOR, 'button[aria-label="Обычный режим (f)"]')
-open_close_chat_button = (By.CSS_SELECTOR, 'button[aria-describedby="a91PVT00reOihUBCXk5Acg2gNm0M94r4"]')
+open_chat_button = (By.CSS_SELECTOR, 'button[aria-label="Развернуть чат"]')
+close_chat_button = (By.CSS_SELECTOR, 'button[aria-label="Свернуть чат"]')
+chat_rules_ok_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-rules-ok-button"]')
+message_to_chat_field = (By.CSS_SELECTOR, 'textarea[data-a-target="chat-input"]')

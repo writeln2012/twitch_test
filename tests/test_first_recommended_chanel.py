@@ -93,3 +93,13 @@ def test_full_screen_mode_button(driver):
     first_rec_chanel = FirstRecommendedChanel(driver)
     first_rec_chanel.click_full_screen_button(driver)
     assert first_rec_chanel.full_screen_mode_activated() is True
+
+
+def test_write_message_to_chat(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.open_chat()
+    first_rec_chanel.write_message_to_chat()
+    assert first_rec_chanel.message_to_chat() == 'Всем привет, хорошего настроения!'

@@ -3,6 +3,7 @@ from pages.locators import first_recommended_chanel_locators as apl
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 class FirstRecommendedChanel(BasePage):
@@ -111,3 +112,16 @@ class FirstRecommendedChanel(BasePage):
 
     def full_screen_mode_activated(self):
         return self.find_element(apl.check_fullscreen_mode).is_displayed()
+
+    def open_chat(self):
+        if self.find_element(apl.close_chat_button).is_displayed():
+            pass
+        else:
+            self.find_element(apl.open_chat_button).click()
+
+    def write_message_to_chat(self):
+        self.find_element(apl.message_to_chat_field).send_keys('Всем привет, хорошего настроения!')
+
+    def message_to_chat(self):
+        return self.find_element(apl.message_to_chat_field).text
+
