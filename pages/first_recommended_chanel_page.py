@@ -120,8 +120,10 @@ class FirstRecommendedChanel(BasePage):
             self.find_element(apl.open_chat_button).click()
 
     def write_message_to_chat(self):
-        self.find_element(apl.message_to_chat_field).send_keys('Всем привет, хорошего настроения!')
+        message = self.find_element(apl.message_to_chat_field)
+        message.send_keys('Всем привет, хорошего настроения!')
+        message.send_keys(Keys.ENTER)
 
-    def message_to_chat(self):
-        return self.find_element(apl.message_to_chat_field).text
+    def join_to_twitch_window(self):
+        return self.find_element(apl.join_to_twitch_window)
 

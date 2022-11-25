@@ -32,3 +32,4 @@ open_chat_button = (By.CSS_SELECTOR, 'button[aria-label="Развернуть ч
 close_chat_button = (By.CSS_SELECTOR, 'button[aria-label="Свернуть чат"]')
 chat_rules_ok_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-rules-ok-button"]')
 message_to_chat_field = (By.CSS_SELECTOR, 'textarea[data-a-target="chat-input"]')
+join_to_twitch_window = (By.CSS_SELECTOR, 'div[data-a-target="passport-modal"]')
