@@ -136,3 +136,35 @@ def test_chat_filtration_button(driver):
     first_rec_chanel.click_chat_settings_button()
     first_rec_chanel.enable_chat_filtration()
     assert first_rec_chanel.chat_filtration().is_enabled()
+
+
+# 13
+def test_community_points_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.open_chat()
+    first_rec_chanel.click_community_points_button()
+    assert first_rec_chanel.channel_points_reward().is_displayed()
+
+
+# 14
+def test_chat_send_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.open_chat()
+    first_rec_chanel.click_chat_send_button()
+    assert first_rec_chanel.join_to_twitch_window().is_displayed()
+
+
+# 15
+def test_follow_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_follow_button()
+    assert first_rec_chanel.join_to_twitch_window().is_displayed()

@@ -143,3 +143,15 @@ class FirstRecommendedChanel(BasePage):
 
     def chat_filtration(self):
         return self.find_element(apl.enable_filtration_in_chat)
+
+    def click_community_points_button(self):
+        self.find_element(apl.community_points_button).click()
+
+    def channel_points_reward(self):
+        return self.find_element(apl.channel_points_reward)
+
+    def click_chat_send_button(self):
+        self.find_element(apl.chat_send_button).click()
+
+    def click_follow_button(self):
+        self.find_element(apl.follow_button).click()

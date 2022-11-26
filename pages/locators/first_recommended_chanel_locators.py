@@ -40,5 +40,7 @@ spectators_field = (By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 hvqWsm"]')
 chat_settings_button = (By.CSS_SELECTOR, 'button[data-a-target="chat-settings"]')
 chat_filter_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-filter-item-click-target"]')
 enable_filtration_in_chat = (By.CSS_SELECTOR, 'div[data-test-selector="chat-filter-top-toggle"]')
-
-
+community_points_button = (By.CSS_SELECTOR, 'div[data-test-selector="community-points-summary"]')
+channel_points_reward = (By.ID, 'channel-points-reward-center-body')
+chat_send_button = (By.CSS_SELECTOR, 'button[data-a-target="chat-send-button"]')
+follow_button = (By.CSS_SELECTOR, 'button[data-a-target="follow-button"]')
