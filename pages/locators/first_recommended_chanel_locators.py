@@ -33,3 +33,12 @@ close_chat_button = (By.CSS_SELECTOR, 'button[aria-label="Свернуть ча�
 chat_rules_ok_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-rules-ok-button"]')
 message_to_chat_field = (By.CSS_SELECTOR, 'textarea[data-a-target="chat-input"]')
 join_to_twitch_window = (By.CSS_SELECTOR, 'div[data-a-target="passport-modal"]')
+community_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-viewer-list"]')
+filter_field = (By.CSS_SELECTOR, 'div[class="tw-search-input"]')
+spectators_button = (By.CSS_SELECTOR, 'button[class="InjectLayout-sc-1i43xsx-0 daSCXI"]')
+spectators_field = (By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 hvqWsm"]')
+chat_settings_button = (By.CSS_SELECTOR, 'button[data-a-target="chat-settings"]')
+chat_filter_button = (By.CSS_SELECTOR, 'button[data-test-selector="chat-filter-item-click-target"]')
+enable_filtration_in_chat = (By.CSS_SELECTOR, 'div[data-test-selector="chat-filter-top-toggle"]')
+
+

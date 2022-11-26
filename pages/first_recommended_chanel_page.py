@@ -4,6 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from time import sleep
 
 
 class FirstRecommendedChanel(BasePage):
@@ -98,8 +99,8 @@ class FirstRecommendedChanel(BasePage):
 
     def click_theatre_mode_button(self, driver):
         self.start_watching()
-        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(self.find_element(
-            apl.theatre_mode_button)).perform()
+        ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
+            self.find_element(apl.theatre_mode_button)).perform()
 
     def theatre_mode_activated(self):
         return self.find_element(apl.check_theatre_mode).is_displayed()
@@ -127,3 +128,18 @@ class FirstRecommendedChanel(BasePage):
     def join_to_twitch_window(self):
         return self.find_element(apl.join_to_twitch_window)
 
+    def click_community_button(self):
+        self.find_element(apl.community_button).click()
+
+    def info_about_community(self):
+        return self.find_element(apl.filter_field)
+
+    def click_chat_settings_button(self):
+        self.find_element(apl.chat_settings_button).click()
+
+    def enable_chat_filtration(self):
+        self.find_element(apl.chat_filter_button).click()
+        self.find_element(apl.enable_filtration_in_chat).click()
+
+    def chat_filtration(self):
+        return self.find_element(apl.enable_filtration_in_chat)
