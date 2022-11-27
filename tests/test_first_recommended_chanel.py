@@ -168,3 +168,24 @@ def test_follow_button(driver):
     first_rec_chanel = FirstRecommendedChanel(driver)
     first_rec_chanel.click_follow_button()
     assert first_rec_chanel.join_to_twitch_window().is_displayed()
+
+
+# 16
+def test_subscribe_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    assert first_rec_chanel.subscription_info().is_displayed()
+
+
+# 17
+def test_paid_subscribe_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_paid_subscription()
+    assert first_rec_chanel.sign_in_window().is_displayed()

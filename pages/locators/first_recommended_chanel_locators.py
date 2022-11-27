@@ -44,3 +44,7 @@ community_points_button = (By.CSS_SELECTOR, 'div[data-test-selector="community-p
 channel_points_reward = (By.ID, 'channel-points-reward-center-body')
 chat_send_button = (By.CSS_SELECTOR, 'button[data-a-target="chat-send-button"]')
 follow_button = (By.CSS_SELECTOR, 'button[data-a-target="follow-button"]')
+subscription_info = (By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 jnwfls support-panel-container"]')
+subscribe_button = (By.CSS_SELECTOR, 'button[data-test-selector="subscribe-button__dropdown"]')
+sing_in_window = (By.CSS_SELECTOR, 'div[data-a-target="passport-modal"]')
+subscribe_main_button = (By.CSS_SELECTOR, 'button[aria-label="Подписаться $4.99"]')

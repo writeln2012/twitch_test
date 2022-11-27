@@ -155,3 +155,15 @@ class FirstRecommendedChanel(BasePage):
 
     def click_follow_button(self):
         self.find_element(apl.follow_button).click()
+
+    def click_subscribe_button(self):
+        self.find_element(apl.subscribe_button).click()
+
+    def subscription_info(self):
+        return self.find_element(apl.subscription_info)
+
+    def click_paid_subscription(self):
+        self.find_element(apl.subscribe_main_button).click()
+
+    def sign_in_window(self):
+        return self.find_element(apl.sing_in_window)
