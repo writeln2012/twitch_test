@@ -248,3 +248,45 @@ def test_biblethump_gif_in_gift_theme(driver):
     first_rec_chanel.click_donate_subscription()
     first_rec_chanel.click_biblethump_gift_theme()
     assert first_rec_chanel.biblethump_gif().is_displayed()
+
+
+# 23
+def test_share_with_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_share_button()
+    assert first_rec_chanel.share_with_field().is_displayed()
+
+
+# 24
+def test_report_translation_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_report_button()
+    first_rec_chanel.click_report_translation_button()
+    assert first_rec_chanel.sign_in_window().is_displayed()
+
+
+# 25
+def test_report_other_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_report_button()
+    first_rec_chanel.click_report_other_button()
+    assert first_rec_chanel.sign_in_window()
+
+
+# 26
+def test_pause_chat_by_scroll(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.pause_chat_by_scroll(driver)
+

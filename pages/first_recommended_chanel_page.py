@@ -5,6 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 
 
 class FirstRecommendedChanel(BasePage):
@@ -198,3 +199,24 @@ class FirstRecommendedChanel(BasePage):
 
     def biblethump_gif(self):
         return self.find_element(apl.biblethump_gif)
+
+    def click_share_button(self):
+        self.find_element(apl.share_button).click()
+
+    def share_with_field(self):
+        return self.find_element(apl.share_field)
+
+    def click_report_button(self):
+        self.find_element(apl.report_button).click()
+
+    def click_report_translation_button(self):
+        self.find_element(apl.report_translation_button).click()
+
+    def click_report_other_button(self):
+        self.find_element(apl.report_other_button).click()
+
+    def pause_chat_by_scroll(self, driver):
+        scroll_origin = ScrollOrigin.from_viewport(10, 10)
+        ActionChains(driver).move_to_element(
+            self.find_element(apl.chat_scroller)).scroll_from_origin(scroll_origin, 0, -50).perform()
+        sleep(9)
