@@ -167,3 +167,34 @@ class FirstRecommendedChanel(BasePage):
 
     def sign_in_window(self):
         return self.find_element(apl.sing_in_window)
+
+    def click_donate_subscription(self):
+        donate_a_subscription_field = self.find_element(apl.donate_a_subscription_field)
+        donate_a_subscription_field.find_element(By.CLASS_NAME, 'hUInuk').click()
+
+    def gift_for_community_window(self):
+        return self.find_element(apl.gift_for_community_window)
+
+    def click_show_love_gift_theme(self):
+        self.find_element(apl.show_love_button).click()
+
+    def show_love_gif(self):
+        return self.find_element(apl.show_love_gif)
+
+    def click_party_gift_theme(self):
+        self.find_element(apl.party_button).click()
+
+    def party_gif(self):
+        return self.find_element(apl.party_gif)
+
+    def click_lul_gift_theme(self):
+        self.find_element(apl.lul_button).click()
+
+    def lul_gif(self):
+        return self.find_element(apl.lul_gif)
+
+    def click_biblethump_gift_theme(self):
+        self.find_element(apl.biblethump_button).click()
+
+    def biblethump_gif(self):
+        return self.find_element(apl.biblethump_gif)

@@ -189,3 +189,62 @@ def test_paid_subscribe_button(driver):
     first_rec_chanel.click_subscribe_button()
     first_rec_chanel.click_paid_subscription()
     assert first_rec_chanel.sign_in_window().is_displayed()
+
+
+# 18
+def test_donate_subscription_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_donate_subscription()
+    assert first_rec_chanel.gift_for_community_window().is_displayed()
+
+
+# 19
+def test_show_love_gif_in_gift_theme(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_donate_subscription()
+    first_rec_chanel.click_show_love_gift_theme()
+    assert first_rec_chanel.show_love_gif().is_displayed()
+
+
+# 20
+def test_party_gif_in_gift_theme(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_donate_subscription()
+    first_rec_chanel.click_party_gift_theme()
+    assert first_rec_chanel.party_gif().is_displayed()
+
+
+# 21
+def test_lul_gif_in_gift_theme(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_donate_subscription()
+    first_rec_chanel.click_lul_gift_theme()
+    assert first_rec_chanel.lul_gif().is_displayed()
+
+
+# 22
+def test_biblethump_gif_in_gift_theme(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_subscribe_button()
+    first_rec_chanel.click_donate_subscription()
+    first_rec_chanel.click_biblethump_gift_theme()
+    assert first_rec_chanel.biblethump_gif().is_displayed()
