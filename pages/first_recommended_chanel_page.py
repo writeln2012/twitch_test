@@ -215,8 +215,9 @@ class FirstRecommendedChanel(BasePage):
     def click_report_other_button(self):
         self.find_element(apl.report_other_button).click()
 
-    def pause_chat_by_scroll(self, driver):
-        scroll_origin = ScrollOrigin.from_viewport(10, 10)
-        ActionChains(driver).move_to_element(
-            self.find_element(apl.chat_scroller)).scroll_from_origin(scroll_origin, 0, -50).perform()
-        sleep(9)
+    def click_streamers_icon(self):
+        self.find_element(apl.streamers_label_icon).click()
+
+    def streamers_channel(self):
+        return self.find_element(apl.streamers_info_field)
+

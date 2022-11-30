@@ -283,10 +283,13 @@ def test_report_other_button(driver):
 
 
 # 26
-def test_pause_chat_by_scroll(driver):
+def test_streamers_icon(driver):
     home_page = HomePage(driver)
     home_page.open_page()
     home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.pause_chat_by_scroll(driver)
+    first_rec_chanel.click_streamers_icon()
+    assert first_rec_chanel.streamers_channel().is_displayed()
+
+
 
