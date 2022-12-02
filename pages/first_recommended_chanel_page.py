@@ -45,7 +45,7 @@ class FirstRecommendedChanel(BasePage):
         field_of_settings_by_video_qualities = self.find_element(apl.field_of_settings)
         list_of_qualities = field_of_settings_by_video_qualities.find_elements(
             By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 beAYWq"]')
-        list_of_qualities[6].click()
+        list_of_qualities[5].click()
 
     def quality_video_change_check(self, driver):
         ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(
@@ -155,6 +155,7 @@ class FirstRecommendedChanel(BasePage):
         self.find_element(apl.chat_send_button).click()
 
     def click_follow_button(self):
+
         self.find_element(apl.follow_button).click()
 
     def click_subscribe_button(self):
@@ -215,9 +216,43 @@ class FirstRecommendedChanel(BasePage):
     def click_report_other_button(self):
         self.find_element(apl.report_other_button).click()
 
-    def click_streamers_icon(self):
-        self.find_element(apl.streamers_label_icon).click()
+    def find_dreadztv_chanel(self):
+        search_query = self.find_element(apl.searching_field)
+        search_query.send_keys('dreadztv')
+        search_query.send_keys(Keys.ENTER)
 
-    def streamers_channel(self):
-        return self.find_element(apl.streamers_info_field)
+    def dreadztv_chanel(self):
+        return self.find_element(apl.dreadztv_chanel)
 
+    def click_collapse_recommended_channels(self):
+        self.find_element(apl.collapse_recommended_channels).click()
+
+    def only_icons_of_streams(self):
+        return self.find_element(apl.side_nav_header_collapsed)
+
+    def click_show_more_channels_button(self):
+        self.find_element(apl.show_more).click()
+
+    def more_channels(self):
+        return self.find_element(apl.show_less)
+
+    def click_user_menu_toggle(self):
+        self.find_element(apl.user_menu_toggle).click()
+
+    def activate_dark_mode_toggle(self):
+        self.find_element(apl.dark_mode_toggle).click()
+
+    def dark_mode(self):
+        return self.find_element(apl.dark_mode_toggle)
+
+    def click_language_button(self):
+        self.find_element(apl.language_button).click()
+
+    def chose_english_language(self):
+        self.find_element(apl.english_language).click()
+
+    def navigation_in_english(self):
+        return self.find_element(apl.check_english_language)
+
+    def click_logout_button(self):
+        self.find_element(apl.logout_button).click()

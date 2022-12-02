@@ -283,13 +283,64 @@ def test_report_other_button(driver):
 
 
 # 26
-def test_streamers_icon(driver):
+def test_searching_field(driver):
     home_page = HomePage(driver)
     home_page.open_page()
     home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_streamers_icon()
-    assert first_rec_chanel.streamers_channel().is_displayed()
+    first_rec_chanel.find_dreadztv_chanel()
+    assert first_rec_chanel.dreadztv_chanel().is_displayed()
 
 
+# 27
+def test_collapse_recommended_channels(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_collapse_recommended_channels()
+    assert first_rec_chanel.only_icons_of_streams().is_displayed()
 
+
+# 28
+def test_show_more_channels_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_show_more_channels_button()
+    assert first_rec_chanel.more_channels().is_displayed()
+
+
+# 29
+def test_dark_mode_toggle(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_user_menu_toggle()
+    first_rec_chanel.activate_dark_mode_toggle()
+    assert first_rec_chanel.dark_mode().is_enabled()
+
+
+# 30
+def test_change_language(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_user_menu_toggle()
+    first_rec_chanel.click_language_button()
+    first_rec_chanel.chose_english_language()
+    assert first_rec_chanel.navigation_in_english().is_displayed()
+
+
+# 31
+def test_logout_button(driver):
+    home_page = HomePage(driver)
+    home_page.open_page()
+    home_page.click_first_recommended_chanel()
+    first_rec_chanel = FirstRecommendedChanel(driver)
+    first_rec_chanel.click_user_menu_toggle()
+    first_rec_chanel.click_logout_button()
+    assert first_rec_chanel.sign_in_window().is_displayed()

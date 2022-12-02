@@ -11,4 +11,3 @@ class HomePage(BasePage):
 
     def click_first_recommended_chanel(self):
         self.find_element(apl.first_recommended_channel).click()
-                
