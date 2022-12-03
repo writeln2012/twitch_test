@@ -186,59 +186,94 @@ def test_message_to_chat_without_signin_not_working(driver):
         assert first_rec_chanel.join_to_twitch_window().is_displayed()
 
 
-# 11
+@allure.feature('First recommended channel')
+@allure.story('Stream community')
+@allure.title('Testing community button')
 def test_community_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.open_chat()
-    first_rec_chanel.click_community_button()
-    assert first_rec_chanel.info_about_community().is_displayed()
+    with allure.step('Open chat'):
+        first_rec_chanel.open_chat()
+    with allure.step('Click community button'):
+        first_rec_chanel.click_community_button()
+    with allure.step('Check that community info is displayed'):
+        assert first_rec_chanel.info_about_community().is_displayed()
 
 
-# 12
+@allure.feature('First recommended channel')
+@allure.story('Stream community')
+@allure.title('Testing community button')
 def test_chat_filtration_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.open_chat()
-    first_rec_chanel.click_chat_settings_button()
-    first_rec_chanel.enable_chat_filtration()
-    assert first_rec_chanel.chat_filtration().is_enabled()
+    with allure.step('Open chat'):
+        first_rec_chanel.open_chat()
+    with allure.step('Click chat settings button'):
+        first_rec_chanel.click_chat_settings_button()
+    with allure.step('Click enable chat filtration button'):
+        first_rec_chanel.enable_chat_filtration()
+    with allure.step('Check that chat filtration is activated'):
+        assert first_rec_chanel.chat_filtration().is_enabled()
 
 
-# 13
+@allure.feature('First recommended channel')
+@allure.story('Community points')
+@allure.title('Testing community points button')
 def test_community_points_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.open_chat()
-    first_rec_chanel.click_community_points_button()
-    assert first_rec_chanel.channel_points_reward().is_displayed()
+    with allure.step('Open chat'):
+        first_rec_chanel.open_chat()
+    with allure.step('Сlick community points button'):
+        first_rec_chanel.click_community_points_button()
+    with allure.step('Check that channel points reward window is displayed'):
+        assert first_rec_chanel.channel_points_reward().is_displayed()
 
 
-# 14
+@allure.feature('First recommended channel')
+@allure.story('Send message')
+@allure.title('Testing chat senf button')
 def test_chat_send_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.open_chat()
-    first_rec_chanel.click_chat_send_button()
-    assert first_rec_chanel.join_to_twitch_window().is_displayed()
+    with allure.step('Open chat'):
+        first_rec_chanel.open_chat()
+    with allure.step('Click chat send button'):
+        first_rec_chanel.click_chat_send_button()
+    with allure.step('Check that join to twitch window is displayed'):
+        assert first_rec_chanel.join_to_twitch_window().is_displayed()
 
 
-# 15
+@allure.feature('First recommended channel')
+@allure.story('Follow button')
+@allure.title('Testing follow button')
 def test_follow_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_follow_button()
-    assert first_rec_chanel.join_to_twitch_window().is_displayed()
+    with allure.step('Click follow button'):
+        first_rec_chanel.click_follow_button(driver)
+    with allure.step('Check that join to twitch window is displayed'):
+        assert first_rec_chanel.join_to_twitch_window().is_displayed()
 
 
 # 16
