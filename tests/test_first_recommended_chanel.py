@@ -1,118 +1,189 @@
-import pytest
-import selenium
 from pages.home_page import HomePage
 from pages.first_recommended_chanel_page import FirstRecommendedChanel
+import pytest
+import allure
 
 
-# 1
+@allure.feature('First recommended channel')
+@allure.story('Pausing stream')
+@allure.title('Testing pausing stream')
 def test_pausing_stream(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.pausing_stream(driver)
-    assert first_rec_chanel.show_pausing_message().is_displayed()
+    with allure.step('Pausing stream'):
+        first_rec_chanel.pausing_stream(driver)
+    with allure.step('Check that the pause button changes to the play button'):
+        assert first_rec_chanel.show_pausing_message().is_displayed()
 
 
-# 2
+@allure.feature('First recommended channel')
+@allure.story('Muting stream')
+@allure.title('Testing muting stream')
 def test_muting_stream(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.muting_stream(driver)
-    assert first_rec_chanel.stream_is_muted(driver) == 'Stream is muted!'
+    with allure.step('Muting stream'):
+        first_rec_chanel.muting_stream(driver)
+    with allure.step('Check that mute changed to unmute'):
+        assert first_rec_chanel.stream_is_muted(driver) == 'Stream is muted!'
 
 
-# 3
+@allure.feature('First recommended channel')
+@allure.story('Changing quality of video')
+@allure.title('Testing changing quality of video')
 def test_change_video_quality_of_stream(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_settings_button(driver)
-    first_rec_chanel.click_quality_button()
-    first_rec_chanel.select_160p_quality()
-    assert first_rec_chanel.quality_video_change_check(driver) == '160p'
+    with allure.step('Click settings button'):
+        first_rec_chanel.click_settings_button(driver)
+    with allure.step('Click quality button'):
+        first_rec_chanel.click_quality_button()
+    with allure.step('Select 160p quality'):
+        first_rec_chanel.select_160p_quality()
+    with allure.step('Check that quality of video is 160p'):
+        assert first_rec_chanel.quality_video_change_check(driver) == '160p'
 
 
-# 4
+@allure.feature('First recommended channel')
+@allure.story('Show video statistics')
+@allure.title('Testing video statistics button')
 def test_video_statistics(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_settings_button(driver)
-    first_rec_chanel.click_advanced_button()
-    first_rec_chanel.click_video_statistics_button()
-    assert first_rec_chanel.check_video_statistics_window().is_displayed()
+    with allure.step('Click settings button'):
+        first_rec_chanel.click_settings_button(driver)
+    with allure.step('Click advanced button'):
+        first_rec_chanel.click_advanced_button()
+    with allure.step('Click video statistics button'):
+        first_rec_chanel.click_video_statistics_button()
+    with allure.step('Check that video statistics window is displayed'):
+        assert first_rec_chanel.check_video_statistics_window().is_displayed()
 
 
-# 5
+@allure.feature('First recommended channel')
+@allure.story('Switch to mini player of stream')
+@allure.title('Testing mini player mod')
 def test_mini_player_window(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_settings_button(driver)
-    first_rec_chanel.click_advanced_button()
-    first_rec_chanel.mini_player_activate()
-    first_rec_chanel.click_view_button()
-    assert first_rec_chanel.check_mini_player_window().is_displayed()
+    with allure.step('Click settings button'):
+        first_rec_chanel.click_settings_button(driver)
+    with allure.step('Click advanced button'):
+        first_rec_chanel.click_advanced_button()
+    with allure.step('Click mini player activate button'):
+        first_rec_chanel.mini_player_activate()
+    with allure.step('Go to view page'):
+        first_rec_chanel.click_view_button()
+    with allure.step('Check that the stream continued in the mini player'):
+        assert first_rec_chanel.check_mini_player_window().is_displayed()
 
 
-# 6
+@allure.feature('First recommended channel')
+@allure.story('Report a bug')
+@allure.title('Testing report a bug button')
 def test_report_a_bug_selection(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_settings_button(driver)
-    first_rec_chanel.click_report_a_bug()
-    first_rec_chanel.select_a_bug()
-    assert first_rec_chanel.error_option_selected().is_selected()
+    with allure.step('Click settings button'):
+        first_rec_chanel.click_settings_button(driver)
+    with allure.step('Click report a bug button'):
+        first_rec_chanel.click_report_a_bug()
+    with allure.step('Select a bug'):
+        first_rec_chanel.select_a_bug()
+    with allure.step('Check that first reason is select'):
+        assert first_rec_chanel.error_option_selected().is_selected()
 
 
-# 7
+@allure.feature('First recommended channel')
+@allure.story('Show hotkeys')
+@allure.title('Testing show hotkeys button')
 def test_show_hotkeys_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_settings_button(driver)
-    first_rec_chanel.click_show_hotkeys()
-    assert first_rec_chanel.list_of_hotkeys().is_displayed()
+    with allure.step('Click settings button'):
+        first_rec_chanel.click_settings_button(driver)
+    with allure.step('Click show hotkeys'):
+        first_rec_chanel.click_show_hotkeys()
+    with allure.step('Check that hotkeys window is displayed'):
+        assert first_rec_chanel.list_of_hotkeys().is_displayed()
 
 
-# 8
+@allure.feature('First recommended channel')
+@allure.story('Theatre mod')
+@allure.title('Testing theatre mode button')
 def test_theatre_mode_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_theatre_mode_button(driver)
-    assert first_rec_chanel.theatre_mode_activated() is True
+    with allure.step('Click theatre mode button'):
+        first_rec_chanel.click_theatre_mode_button(driver)
+    with allure.step('Check that video plays on theatre mode'):
+        assert first_rec_chanel.theatre_mode_activated() is True
 
 
-# 9
+@allure.feature('First recommended channel')
+@allure.story('Full screen mod')
+@allure.title('Testing full screen button')
 def test_full_screen_mode_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_full_screen_button(driver)
-    assert first_rec_chanel.full_screen_mode_activated() is True
+    with allure.step('Click full screen button'):
+        first_rec_chanel.click_full_screen_button(driver)
+    with allure.step('Check that video plays on full screen mode'):
+        assert first_rec_chanel.full_screen_mode_activated() is True
 
 
-# 10
+@allure.feature('First recommended channel')
+@allure.story('Send message to chat')
+@allure.title('Testing sending message to chat')
 def test_message_to_chat_without_signin_not_working(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.open_chat()
-    first_rec_chanel.write_message_to_chat()
-    assert first_rec_chanel.join_to_twitch_window().is_displayed()
+    with allure.step('Open chat'):
+        first_rec_chanel.open_chat()
+    with allure.step('Write message to chat'):
+        first_rec_chanel.write_message_to_chat()
+    with allure.step('Check that join to twitch window is displayed'):
+        assert first_rec_chanel.join_to_twitch_window().is_displayed()
 
 
 # 11
