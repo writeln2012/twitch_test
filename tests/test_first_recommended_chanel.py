@@ -276,177 +276,287 @@ def test_follow_button(driver):
         assert first_rec_chanel.join_to_twitch_window().is_displayed()
 
 
-# 16
+@allure.feature('First recommended channel')
+@allure.story('Subscribe button')
+@allure.title('Testing subscribe button')
 def test_subscribe_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    assert first_rec_chanel.subscription_info().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Check that subscription info is displayed'):
+        assert first_rec_chanel.subscription_info().is_displayed()
 
 
-# 17
+@allure.feature('First recommended channel')
+@allure.story('Subscribe paid button')
+@allure.title('Testing subscribe paid button')
 def test_paid_subscribe_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_paid_subscription()
-    assert first_rec_chanel.sign_in_window().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click subscribe paid button'):
+        first_rec_chanel.click_paid_subscription()
+    with allure.step('Check that sign in window is displayed'):
+        assert first_rec_chanel.sign_in_window().is_displayed()
 
 
-# 18
+@allure.feature('First recommended channel')
+@allure.story('Donate subscription')
+@allure.title('Testing donate subscription button')
 def test_donate_subscription_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_donate_subscription()
-    assert first_rec_chanel.gift_for_community_window().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click donate subscription button'):
+        first_rec_chanel.click_donate_subscription()
+    with allure.step('Check that gift for community window is displayed'):
+        assert first_rec_chanel.gift_for_community_window().is_displayed()
 
 
-# 19
+@allure.feature('First recommended channel')
+@allure.story('Gif in gift')
+@allure.title('Testing show love gif')
 def test_show_love_gif_in_gift_theme(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_donate_subscription()
-    first_rec_chanel.click_show_love_gift_theme()
-    assert first_rec_chanel.show_love_gif().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click donate subscription button'):
+        first_rec_chanel.click_donate_subscription()
+    with allure.step('Click show love gift theme button'):
+        first_rec_chanel.click_show_love_gift_theme()
+    with allure.step('Check that show love gif is displayed'):
+        assert first_rec_chanel.show_love_gif().is_displayed()
 
 
-# 20
+@allure.feature('First recommended channel')
+@allure.story('Gif in gift')
+@allure.title('Testing show party gif')
 def test_party_gif_in_gift_theme(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_donate_subscription()
-    first_rec_chanel.click_party_gift_theme()
-    assert first_rec_chanel.party_gif().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click donate subscription button'):
+        first_rec_chanel.click_donate_subscription()
+    with allure.step('Click party gift theme button'):
+        first_rec_chanel.click_party_gift_theme()
+    with allure.step('Check that party gif is displayed'):
+        assert first_rec_chanel.party_gif().is_displayed()
 
 
-# 21
+@allure.feature('First recommended channel')
+@allure.story('Gif in gift')
+@allure.title('Testing show lul gif')
 def test_lul_gif_in_gift_theme(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_donate_subscription()
-    first_rec_chanel.click_lul_gift_theme()
-    assert first_rec_chanel.lul_gif().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click donate subscription button'):
+        first_rec_chanel.click_donate_subscription()
+    with allure.step('Click lul gift theme button'):
+        first_rec_chanel.click_lul_gift_theme()
+    with allure.step('Check that lul gif is displayed'):
+        assert first_rec_chanel.lul_gif().is_displayed()
 
 
-# 22
+@allure.feature('First recommended channel')
+@allure.story('Gif in gift')
+@allure.title('Testing biblethump lul gif')
 def test_biblethump_gif_in_gift_theme(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_subscribe_button()
-    first_rec_chanel.click_donate_subscription()
-    first_rec_chanel.click_biblethump_gift_theme()
-    assert first_rec_chanel.biblethump_gif().is_displayed()
+    with allure.step('Click subscribe button'):
+        first_rec_chanel.click_subscribe_button()
+    with allure.step('Click donate subscription button'):
+        first_rec_chanel.click_donate_subscription()
+    with allure.step('Click biblethump gift theme button'):
+        first_rec_chanel.click_biblethump_gift_theme()
+    with allure.step('Check that biblethump gif is displayed'):
+        assert first_rec_chanel.biblethump_gif().is_displayed()
 
 
-# 23
+@allure.feature('First recommended channel')
+@allure.story('Share with')
+@allure.title('Testing share with button')
 def test_share_with_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_share_button()
-    assert first_rec_chanel.share_with_field().is_displayed()
+    with allure.step('Click share button'):
+        first_rec_chanel.click_share_button()
+    with allure.step('Check that share with field is displayed'):
+        assert first_rec_chanel.share_with_field().is_displayed()
 
 
-# 24
+@allure.feature('First recommended channel')
+@allure.story('Report translation')
+@allure.title('Testing report translation button')
 def test_report_translation_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_report_button()
-    first_rec_chanel.click_report_translation_button()
-    assert first_rec_chanel.sign_in_window().is_displayed()
+    with allure.step('Click report button'):
+        first_rec_chanel.click_report_button()
+    with allure.step('Click report translation button'):
+        first_rec_chanel.click_report_translation_button()
+    with allure.step('Check that sign in window is displayed'):
+        assert first_rec_chanel.sign_in_window().is_displayed()
 
 
-# 25
+@allure.feature('First recommended channel')
+@allure.story('Report translation')
+@allure.title('Testing report other button')
 def test_report_other_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_report_button()
-    first_rec_chanel.click_report_other_button()
-    assert first_rec_chanel.sign_in_window()
+    with allure.step('Click report button'):
+        first_rec_chanel.click_report_button()
+    with allure.step('Click report other button'):
+        first_rec_chanel.click_report_other_button()
+    with allure.step('Check that sign in window is displayed'):
+        assert first_rec_chanel.sign_in_window().is_displayed()
 
 
-# 26
+@allure.feature('First recommended channel')
+@allure.story('Searching field')
+@allure.title('Testing searching field')
 def test_searching_field(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.find_dreadztv_chanel()
-    assert first_rec_chanel.dreadztv_chanel().is_displayed()
+    with allure.step('Find dreadztv chanel'):
+        first_rec_chanel.find_dreadztv_chanel()
+    with allure.step('Check that dreadztv chanel is displayed'):
+        assert first_rec_chanel.dreadztv_chanel().is_displayed()
 
 
-# 27
+@allure.feature('First recommended channel')
+@allure.story('Collapse recommended channels')
+@allure.title('Testing collapse recommended channels button')
 def test_collapse_recommended_channels(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_collapse_recommended_channels()
-    assert first_rec_chanel.only_icons_of_streams().is_displayed()
+    with allure.step('Click collapse recommended channels button'):
+        first_rec_chanel.click_collapse_recommended_channels()
+    with allure.step('Check that only icons of streams are displayed'):
+        assert first_rec_chanel.only_icons_of_streams().is_displayed()
 
 
-# 28
+@allure.feature('First recommended channel')
+@allure.story('Show more channels button')
+@allure.title('Testing show more channels button')
 def test_show_more_channels_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_show_more_channels_button()
-    assert first_rec_chanel.more_channels().is_displayed()
+    with allure.step('Click show more channels button'):
+        first_rec_chanel.click_show_more_channels_button()
+    with allure.step('Check that show less button is displayed'):
+        assert first_rec_chanel.more_channels().is_displayed()
 
 
-# 29
+@allure.feature('First recommended channel')
+@allure.story('Dark mode')
+@allure.title('Testing dark mode toggle')
 def test_dark_mode_toggle(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_user_menu_toggle()
-    first_rec_chanel.activate_dark_mode_toggle()
-    assert first_rec_chanel.dark_mode().is_enabled()
+    with allure.step('Click user_menu_toggle button'):
+        first_rec_chanel.click_user_menu_button()
+    with allure.step('Activate dark mode toggle'):
+        first_rec_chanel.activate_dark_mode_toggle()
+    with allure.step('Check that dark mode toggle is enabled'):
+        assert first_rec_chanel.dark_mode().is_enabled()
 
 
-# 30
+@allure.feature('First recommended channel')
+@allure.story('Change language')
+@allure.title('Testing change language')
 def test_change_language(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_user_menu_toggle()
-    first_rec_chanel.click_language_button()
-    first_rec_chanel.chose_english_language()
-    assert first_rec_chanel.navigation_in_english().is_displayed()
+    with allure.step('Click user_menu_toggle button'):
+        first_rec_chanel.click_user_menu_button()
+    with allure.step('Click language button'):
+        first_rec_chanel.click_language_button()
+    with allure.step('Chose english language'):
+        first_rec_chanel.chose_english_language()
+    with allure.step('Check that navigation is in english'):
+        assert first_rec_chanel.navigation_in_english().is_displayed()
 
 
 # 31
 def test_logout_button(driver):
     home_page = HomePage(driver)
-    home_page.open_page()
-    home_page.click_first_recommended_chanel()
+    with allure.step('Open Home page'):
+        home_page.open_page()
+    with allure.step('Click first recommended channel'):
+        home_page.click_first_recommended_chanel()
     first_rec_chanel = FirstRecommendedChanel(driver)
-    first_rec_chanel.click_user_menu_toggle()
-    first_rec_chanel.click_logout_button()
-    assert first_rec_chanel.sign_in_window().is_displayed()
+    with allure.step('Click user_menu_toggle button'):
+        first_rec_chanel.click_user_menu_button()
+    with allure.step('Click logout button'):
+        first_rec_chanel.click_logout_button()
+    with allure.step('Check that sign in window is displayed'):
+        assert first_rec_chanel.sign_in_window().is_displayed()

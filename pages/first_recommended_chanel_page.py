@@ -236,7 +236,7 @@ class FirstRecommendedChanel(BasePage):
     def more_channels(self):
         return self.find_element(apl.show_less)
 
-    def click_user_menu_toggle(self):
+    def click_user_menu_button(self):
         self.find_element(apl.user_menu_toggle).click()
 
     def activate_dark_mode_toggle(self):
