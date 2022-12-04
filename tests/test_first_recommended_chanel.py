@@ -205,8 +205,8 @@ def test_community_button(driver):
 
 
 @allure.feature('First recommended channel')
-@allure.story('Stream community')
-@allure.title('Testing community button')
+@allure.story('Сhat filtration')
+@allure.title('Testing chat filtration button')
 def test_chat_filtration_button(driver):
     home_page = HomePage(driver)
     with allure.step('Open Home page'):
