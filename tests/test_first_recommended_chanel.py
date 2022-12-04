@@ -1,6 +1,5 @@
 from pages.home_page import HomePage
 from pages.first_recommended_chanel_page import FirstRecommendedChanel
-import pytest
 import allure
 
 
