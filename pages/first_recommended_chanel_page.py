@@ -153,8 +153,9 @@ class FirstRecommendedChanel(BasePage):
         self.find_element(apl.chat_send_button).click()
 
     def click_follow_button(self, driver):
-        ActionChains(driver).pause(3).perform()
-        self.find_element(apl.follow_button).click()
+        ActionChains(driver).move_to_element(
+            self.find_element(apl.follow_button)).click(
+            self.find_element(apl.follow_button)).perform()
 
     def click_subscribe_button(self):
         self.find_element(apl.subscribe_button).click()
