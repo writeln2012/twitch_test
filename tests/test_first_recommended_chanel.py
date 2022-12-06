@@ -49,10 +49,10 @@ def test_change_video_quality_of_stream(driver):
         first_rec_chanel.click_settings_button(driver)
     with allure.step('Click quality button'):
         first_rec_chanel.click_quality_button()
-    with allure.step('Select 160p quality'):
-        first_rec_chanel.select_160p_quality()
-    with allure.step('Check that quality of video is 160p'):
-        assert first_rec_chanel.quality_video_change_check(driver) == '160p'
+    with allure.step('Select 1080p60 quality'):
+        first_rec_chanel.select_1080p60_quality()
+    with allure.step('Check that quality of video is 1080p60'):
+        assert first_rec_chanel.quality_video_change_check(driver) == '1080p60 (источник)'
 
 
 @allure.feature('First recommended channel')

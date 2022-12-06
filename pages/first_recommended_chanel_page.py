@@ -39,11 +39,11 @@ class FirstRecommendedChanel(BasePage):
     def click_quality_button(self):
         self.find_element(apl.quality_video_button).click()
 
-    def select_160p_quality(self):
+    def select_1080p60_quality(self):
         field_of_settings_by_video_qualities = self.find_element(apl.field_of_settings)
         list_of_qualities = field_of_settings_by_video_qualities.find_elements(
             By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 beAYWq"]')
-        list_of_qualities[5].click()
+        list_of_qualities[1].click()
 
     def quality_video_change_check(self, driver):
         ActionChains(driver).move_to_element(self.find_element(apl.stream_screen)).click(

@@ -13,7 +13,7 @@ list_of_video_qualities = (By.CSS_SELECTOR, 'div[class="Layout-sc-1xcs6mc-0 beAY
 quality_video_check = (By.CLASS_NAME, 'kLZqyf')
 advanced_button = (By.CSS_SELECTOR, 'button[data-a-target="player-settings-menu-item-advanced"]')
 advanced_settings_field = (By.CSS_SELECTOR, 'div[data-a-target="player-settings-menu"]')
-video_statistics_window = (By.CSS_SELECTOR, 'div[data-a-target="player-overlay-video-stats"]')
+video_statistics_window = (By.CSS_SELECTOR, 'table[class="Table-sc-602hti-0 feFOCU tw-table"]')
 indicator_of_mini_player = (By.CSS_SELECTOR, 'div[data-a-target="player-settings-submenu-advanced-toggle-mini"]')
 view_button = (By.CLASS_NAME, 'navigation-link')
 mini_player_window = (By.CLASS_NAME, 'video-player__overlay')
